@@ -2,7 +2,7 @@ import pygame
 import methods as m
 
 # Hyperparameters
-GRID_FILE_PATH = "grid.txt"
+GRID_FILE_PATH = "Gosper_Glider_Gun.txt"
 SCREEN_HEIGTH, SCREEN_WIDTH = m.screenSize(GRID_FILE_PATH)
 FONT = "Comic Sans MS"
 FONT_SIZE = 30
@@ -13,13 +13,15 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGTH))
 clock = pygame.time.Clock()
 running = True
 
+# Game of life setup
 cells_alive = m.readGridFile(GRID_FILE_PATH)
 frequency = 10
 generation = 1
 pause = False
+evolution = False
 
 text_font = pygame.font.SysFont(FONT, FONT_SIZE)
-play_rect = pygame.Rect(SCREEN_WIDTH-100, 90, 20, 20)
+play_rect = pygame.Rect(SCREEN_WIDTH-100, 120, 20, 20)
 
 while running:
     for event in pygame.event.get():
@@ -32,6 +34,8 @@ while running:
                 frequency-=1
             elif event.key == pygame.K_SPACE:
                 pause = not pause
+            elif event.key == pygame.K_g:
+                evolution = not evolution
 
     if not pause:
         screen.fill("black")
@@ -74,8 +78,12 @@ while running:
         
         for cell in cells_update:
             if cells_update[cell] == "1":
+                if evolution:
+                    screen.fill("green", m.greedToScreen(cell))
                 cells_alive.append(cell)
             else:
+                if evolution:
+                    screen.fill("red", m.greedToScreen(cell))
                 cells_alive.remove(cell)
         generation += 1
 
@@ -96,6 +104,13 @@ while running:
             screen_height_margin = 60,
             screen = screen)
 
+        # Evolution
+        m.drawText(text = "Evolution : "+("On" if evolution else "Off"),
+            font = text_font,
+            color = "Red",
+            screen_width_margin = SCREEN_WIDTH-100,
+            screen_height_margin = 90,
+            screen = screen)
     
     # Update pause button
     pygame.draw.rect(screen, "Black", play_rect)
@@ -105,7 +120,5 @@ while running:
         m.drawPlayButton(screen, "Red", play_rect)   
     
     pygame.display.flip()
-
-    clock.tick(frequency)  # limits FPS to 60
-
+    clock.tick(frequency)
 pygame.quit()
