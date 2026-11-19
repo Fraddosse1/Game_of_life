@@ -22,8 +22,11 @@ To create your own Game of Life pattern, simply define a binary grid in a **.txt
 
 ### Controls
 **Space:** Pause or resume the simulation
+
 **G:** Enable or disable the next-generation preview
+
 **Up Arrow:** Increase the simulation speed (FPS)
+
 **Down Arrow:** Decrease the simulation speed (FPS)
 
 
