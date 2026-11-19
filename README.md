@@ -2,6 +2,7 @@
 Simple simulation of "The Game of Life" imagined by John Horton Conway.
 
 **Gosper Glider Gun :**
+
 https://github.com/user-attachments/assets/e940b5ef-9a43-4ad3-a1c0-25f61f1ce8b4
 
 ## Tech Stack
