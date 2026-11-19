@@ -20,12 +20,22 @@ Once the grid is loaded, the simulation runs continuously, computing and display
 ### Creating Custom Patterns
 To create your own Game of Life pattern, simply define a binary grid in a **.txt** file using 0s and 1s, then update the GRID_FILE_PATH constant to point to your file. The program will automatically load the pattern and adapt the simulation window to its dimensions.
 
-## Tech Stack
-### Language
-Python
+### Controls
+**Space:** Pause or resume the simulation
+**G:** Enable or disable the next-generation preview
+**Up Arrow:** Increase the simulation speed (FPS)
+**Down Arrow:** Decrease the simulation speed (FPS)
 
-### Libraries
-Pygame
+
+## Tech Stack
+### Requirements
+- Python 3.10+
+- Pygame
+
+## Running the Simulation
+```
+python src/main.py
+```
 
 ## Project structure
 
