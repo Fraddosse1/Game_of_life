@@ -1,5 +1,4 @@
 CELL_GRID_RATIO = 10
-GRID_SCREEN_SCALE = 2
 
 import pygame
 
@@ -13,7 +12,7 @@ def screenSize(path):
                 for c in line:
                     width+=1
             height+=1
-    return height*CELL_GRID_RATIO*GRID_SCREEN_SCALE, width*CELL_GRID_RATIO*GRID_SCREEN_SCALE
+    return (height*CELL_GRID_RATIO + 30), (width*CELL_GRID_RATIO + 100)
 
 def readGridFile(path):
     with open(path, "r", encoding="utf-8") as f:

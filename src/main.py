@@ -4,6 +4,7 @@ import methods as m
 # Hyperparameters
 GRID_FILE_PATH = "Gosper_Glider_Gun.txt"
 SCREEN_HEIGTH, SCREEN_WIDTH = m.screenSize(GRID_FILE_PATH)
+
 FONT = "Comic Sans MS"
 FONT_SIZE = 30
 
