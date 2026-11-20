@@ -3,7 +3,8 @@ Simple simulation of "The Game of Life" imagined by John Horton Conway.
 
 **Gosper Glider Gun :**
 
-https://github.com/user-attachments/assets/e940b5ef-9a43-4ad3-a1c0-25f61f1ce8b4
+<img width="800" height="807" alt="711446123-e940b5ef-9a43-4ad3-a1c0-25f61f1ce8b4-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/6e4f1dee-cb03-41dd-8798-b33f22f9c07d" />
+
 
 ## How it works
 The program reads a binary grid from a text file whose path is specified in the **GRID_FILE_PATH** constant located in **main.py**.
